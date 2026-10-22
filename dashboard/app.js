@@ -15,6 +15,7 @@ const bcrypt = require("bcrypt");
 const axios = require("axios");
 const mimeDB = require("mime-db");
 const http = require("http");
+const path = require("path");
 const server = http.createServer(app);
 
 const imageExt = ["png", "gif", "webp", "jpeg", "jpg"];
@@ -117,6 +118,10 @@ module.exports = async (api) => {
 	app.use("/css", express.static(`${__dirname}/css`));
 	app.use("/js", express.static(`${__dirname}/js`));
 	app.use("/images", express.static(`${__dirname}/images`));
+
+	// Vercel Speed Insights - serve the script
+	const speedInsightsPath = path.join(__dirname, "../node_modules/@vercel/speed-insights/dist");
+	app.use("/_vercel/speed-insights", express.static(speedInsightsPath));
 
 	require("./passport-config.js")(Passport, dashBoardData, bcrypt);
 	app.use(Passport.initialize());
