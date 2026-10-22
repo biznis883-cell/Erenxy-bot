@@ -9,6 +9,8 @@
         },
         "dependencies": {
                 "@distube/ytdl-core": "^4.13.3",
+                "@dongdev/fca-unofficial": "^3.0.31",
+                "@vercel/speed-insights": "^2.0.0",
                 "axios": "^1.4.0",
                 "bcrypt": "^5.0.1",
                 "bluebird": "^3.7.2",
@@ -42,7 +44,6 @@
                 "passport": "^0.6.0",
                 "passport-local": "^1.0.0",
                 "path": "^0.12.7",
-                "@dongdev/fca-unofficial": "^3.0.31",
                 "qrcode-reader": "^1.0.4",
                 "qs": "^6.11.0",
                 "request": "^2.88.2",
